@@ -23,7 +23,7 @@
 ```
 
 Astro は `src/pages/` ディレクトリにある `.astro` または `.md` ファイルを探します。各ページは、そのファイル名に基づいてルートとして公開されます。
-src/components/` には特別なものはありませんが、Astro/React/Vue/Svelte/Preactのコンポーネントはここに置くのが好ましいでしょう。
+`src/components/` には特別なものはありませんが、Astro/React/Vue/Svelte/Preactのコンポーネントはここに置くのが好ましいでしょう。
 画像のような静的なアセットがあれば、`public/` ディレクトリに置くことができます。
 
 ## 🧞 Commands
