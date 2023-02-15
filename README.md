@@ -38,3 +38,4 @@ src/components/` には特別なものはありませんが、Astro/React/Vue/Sv
 | `npm run preview`      | デプロイする前に、ローカルでビルドをプレビューします。      |
 | `npm run astro ...`    | `astro add`、`astro preview`などの CLI コマンドを実行する。 |
 | `npm run astro --help` | Astro CLI の使用に関するヘルプを見る                        |
+
