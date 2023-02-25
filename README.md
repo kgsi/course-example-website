@@ -1,4 +1,4 @@
-# coloso-example-website
+# course-example-website
 
 ## Use Framework
 
