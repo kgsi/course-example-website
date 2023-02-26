@@ -11,7 +11,10 @@
     "lint:html": "markuplint \"src/**/*.astro\""
   },
   "dependencies": {
-    "astro": "^2.0.15"
+    "@astrojs/image": "^0.15.1",
+    "astro": "^2.0.15",
+    "astro-seo": "^0.7.1",
+    "reset-css": "^5.0.1"
   },
   "devDependencies": {
     "@markuplint/astro-parser": "^3.3.0",
