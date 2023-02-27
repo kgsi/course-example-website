@@ -26,11 +26,31 @@ const { title, description } = Astro.props
     <slot />
     <Footer />
     <style is:global>
-      :root {
+      body {
+        overflow-wrap: break-word;
+        font-family: system-ui, sans-serif;
       }
-      html {
+      a {
+        color: inherit;
       }
-      code {
+      img {
+        vertical-align: middle;
+      }
+      input,
+      button,
+      textarea {
+        margin: 0;
+        padding: 0;
+        border: none;
+        background-color: inherit;
+        color: inherit;
+      }
+      button,
+      input,
+      select,
+      textarea {
+        font-family: inherit;
+        font-size: 100%;
       }
     </style>
   </body>
