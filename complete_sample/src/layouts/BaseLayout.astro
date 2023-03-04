@@ -2,7 +2,7 @@
 import { SEO } from 'astro-seo'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
-import '../../node_modules/reset-css/reset.css'
+import GlobalStyle from '../components/GlobalStyle.astro'
 
 export interface Props {
   title: string
@@ -20,38 +20,11 @@ const { title, description } = Astro.props
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <GlobalStyle />
   </head>
   <body>
     <Header />
     <slot />
     <Footer />
-    <style is:global>
-      body {
-        overflow-wrap: break-word;
-        font-family: system-ui, sans-serif;
-      }
-      a {
-        color: inherit;
-      }
-      img {
-        vertical-align: middle;
-      }
-      input,
-      button,
-      textarea {
-        margin: 0;
-        padding: 0;
-        border: none;
-        background-color: inherit;
-        color: inherit;
-      }
-      button,
-      input,
-      select,
-      textarea {
-        font-family: inherit;
-        font-size: 100%;
-      }
-    </style>
   </body>
 </html>
