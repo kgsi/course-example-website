@@ -1,0 +1,21 @@
+---
+export interface Props {
+  gap?: string
+}
+
+const { gap = '16px' } = Astro.props
+---
+
+<div class="cluster">
+  <slot />
+</div>
+
+<style define:vars={{ gap }}>
+  .cluster {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    justify-content: flex-start;
+    align-items: center;
+  }
+</style>

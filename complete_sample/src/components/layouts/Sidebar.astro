@@ -1,0 +1,31 @@
+---
+export interface Props {
+  gap?: string
+  contentMin?: string
+}
+
+const { gap = '48px', contentMin = '50%' } = Astro.props
+---
+
+<div class="with-sidebar">
+  <slot />
+</div>
+
+<style define:vars={{ gap, contentMin }}>
+  .with-sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+  }
+
+  .with-sidebar > :global(:first-child) {
+    text-align: center;
+    flex-grow: 1;
+  }
+
+  .with-sidebar > :global(:last-child) {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-inline-size: var(--contentMin);
+  }
+</style>

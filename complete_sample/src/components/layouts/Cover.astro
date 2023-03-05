@@ -1,0 +1,31 @@
+---
+export interface Props {
+  minHight?: string
+}
+
+const { minHight = '50vh' } = Astro.props
+---
+
+<div class="cover">
+  <div class="cover__inner">
+    <slot />
+  </div>
+</div>
+
+<style define:vars={{ minHight }}>
+  .cover {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-block-size: var(--minHight);
+  }
+
+  .cover__inner {
+    margin-block: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+</style>

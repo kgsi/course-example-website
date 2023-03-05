@@ -1,0 +1,19 @@
+---
+export interface Props {
+  width?: string
+}
+
+const { width = '80rem' } = Astro.props
+---
+
+<div class="center">
+  <slot />
+</div>
+
+<style define:vars={{ width }}>
+  .center {
+    box-sizing: content-box;
+    margin-inline: auto;
+    max-inline-size: var(--width);
+  }
+</style>

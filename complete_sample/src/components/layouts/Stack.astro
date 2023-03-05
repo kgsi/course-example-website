@@ -1,0 +1,27 @@
+---
+export interface Props {
+  gap?: string
+}
+
+const { gap = '16px' } = Astro.props
+---
+
+<div class="stack">
+  <slot />
+</div>
+
+<style define:vars={{ gap }}>
+  .stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .stack > :global(*) {
+    margin-block: 0;
+  }
+
+  .stack > :global(* + *) {
+    margin-block-start: var(--gap);
+  }
+</style>
