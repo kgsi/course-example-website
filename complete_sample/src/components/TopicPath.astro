@@ -1,0 +1,42 @@
+---
+export interface Props {
+  topicPathArray: {
+    title: string
+    href?: string
+  }[]
+}
+
+const { topicPathArray } = Astro.props
+---
+
+<ol class="topic-path">
+  <li><a href="#">Home</a></li>
+  {
+    topicPathArray.map((item) => {
+      return <li>{item.href ? <a href={item.href}>{item.title}</a> : <a>{item.title}</a>}</li>
+    })
+  }
+</ol>
+
+<style>
+  .topic-path {
+    display: flex;
+  }
+
+  .topic-path > li:first-child {
+    margin-inline-start: 0;
+  }
+
+  .topic-path > li:after {
+    content: '>';
+    padding-inline: 24px;
+  }
+
+  .topic-path > li:last-child:after {
+    content: none;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+</style>

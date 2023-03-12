@@ -1,0 +1,23 @@
+---
+---
+
+<table>
+  <slot />
+</table>
+
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  table :global(:is(th, td)) {
+    text-align: left;
+    border-block: 1px solid var(--color-black);
+    padding: 24px;
+  }
+
+  table :global(th) {
+    font-weight: bold;
+  }
+</style>

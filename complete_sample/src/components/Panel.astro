@@ -1,0 +1,48 @@
+---
+import { Image } from '@astrojs/image/components'
+import Stack from '../components/layouts/Stack.astro'
+
+export interface Props {
+  src: string
+  srcAlt?: string
+  title: string
+  herf: string
+}
+
+const { src, srcAlt = '', title, herf } = Astro.props
+---
+
+<div class="panel">
+  <Stack>
+    <div class="panel__header">
+      <figure class="panel__thumbnail">
+        <Image src={src} alt={srcAlt} width={400} height={240} />
+      </figure>
+    </div>
+    <Stack gap="8px">
+      <p class="panel__title">{title}</p>
+      <p class="panel__link"><a href={herf}>詳細を見る<i class="fa-solid fa-arrow-right"></i></a></p>
+      <Stack />
+    </Stack>
+  </Stack>
+</div>
+
+<style>
+  .panel__title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .panel__link a {
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .panel__link a > i {
+    margin-inline-start: 4px;
+  }
+
+  .panel__link a:hover {
+    text-decoration: underline;
+  }
+</style>

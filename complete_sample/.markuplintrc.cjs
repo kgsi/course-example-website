@@ -35,4 +35,16 @@ module.exports = {
     'no-hard-code-id': false,
     'ineffective-attr': false,
   },
+  overrides: {
+    './src/components/Button.astro': {
+      rules: {
+        'require-accessible-name': false,
+      },
+    },
+    './src/components/Table.astro': {
+      rules: {
+        'require-accessible-name': false,
+      },
+    },
+  },
 }

@@ -1,0 +1,29 @@
+---
+export interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+---
+
+<div class="hero">
+  <h1>{title}</h1>
+</div>
+
+<style>
+  .hero {
+    background-image: url('/bg-hero.png');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justifiy-content: flex-start;
+    flex-wrap: wrap;
+    padding-inline: 16px;
+    height: clamp(200px, 30vh, 320px);
+    font-size: clamp(var(--text-size-xl), 10 * (1vw + 1vh) / 2, var(--text-size-3xl));
+    color: var(--color-white);
+    font-family: var(--font-family-emphasis);
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+</style>
