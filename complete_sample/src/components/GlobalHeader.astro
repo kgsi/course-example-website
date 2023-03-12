@@ -1,0 +1,147 @@
+---
+import AnchorButton from '../components/AnchorButton.astro'
+
+export interface Props {
+  current: 'index' | 'company' | 'services' | 'recruit' | 'contact'
+}
+
+const activeClass = { class: 'active' }
+
+const { current = 'index' } = Astro.props
+---
+
+<header class="globalHeader">
+  <div class="globalHeader__siteid">
+    <a {...current === 'index' ? { 'aria-current': 'page' } : {}} href="/">
+      <svg
+        role="img"
+        aria-label="FAKE AGENCY"
+        width="182"
+        height="21"
+        viewBox="0 0 182 21"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M11.4041 12.888H5.16007V20H0.820068V1.12799H12.3281V4.57199H5.16007V9.44399H11.4041V12.888Z" fill="white"></path>
+        <path
+          d="M20.6961 11.992L20.5001 12.664H25.0361L24.8401 11.992C24.2988 10.1627 23.8508 8.60399 23.4961 7.31599C23.1601 6.02799 22.9548 5.19733 22.8801 4.82399L22.7681 4.26399C22.6188 5.29066 21.9281 7.86666 20.6961 11.992ZM18.3161 20H13.8081L20.1081 1.12799H25.5401L31.8401 20H27.2201L26.0721 16.136H19.4641L18.3161 20Z"
+          fill="white"></path>
+        <path
+          d="M50.5562 20H45.1522L38.8242 10.62L44.9282 1.12799H50.0522L43.8642 10.564L50.5562 20ZM38.6282 20H34.3162V1.12799H38.6282V20Z"
+          fill="white"></path>
+        <path
+          d="M64.5872 20H52.8552V1.12799H64.4752V4.57199H57.1952V8.85599H63.6912V12.272H57.1952V16.556H64.5872V20Z"
+          fill="white"></path>
+        <path
+          d="M80.7977 11.992L80.6017 12.664H85.1377L84.9417 11.992C84.4004 10.1627 83.9524 8.60399 83.5977 7.31599C83.2617 6.02799 83.0564 5.19733 82.9817 4.82399L82.8697 4.26399C82.7204 5.29066 82.0297 7.86666 80.7977 11.992ZM78.4177 20H73.9097L80.2097 1.12799H85.6417L91.9417 20H87.3217L86.1737 16.136H79.5657L78.4177 20Z"
+          fill="white"></path>
+        <path
+          d="M110.686 18.264C108.894 19.5707 106.635 20.224 103.91 20.224C100.886 20.224 98.4311 19.356 96.5457 17.62C94.6604 15.884 93.7177 13.5227 93.7177 10.536C93.7177 7.58666 94.6977 5.22533 96.6577 3.45199C98.6364 1.67866 101.138 0.791992 104.162 0.791992C106.29 0.791992 108.128 1.18399 109.678 1.96799V6.27999C107.886 5.25333 106.047 4.73999 104.162 4.73999C102.388 4.73999 100.979 5.27199 99.9337 6.33599C98.8884 7.38133 98.3657 8.78133 98.3657 10.536C98.3657 12.3093 98.8791 13.7187 99.9057 14.764C100.932 15.8093 102.332 16.332 104.106 16.332C104.908 16.332 105.702 16.2107 106.486 15.968V12.412H103.434V8.74399H110.686V18.264Z"
+          fill="white"></path>
+        <path
+          d="M125.919 20H114.187V1.12799H125.807V4.57199H118.527V8.85599H125.023V12.272H118.527V16.556H125.919V20Z"
+          fill="white"></path>
+        <path
+          d="M133.73 20H129.418V1.12799H134.15L138.546 8.93999C139.162 10.0413 139.694 11.0773 140.142 12.048C140.608 13 140.907 13.672 141.038 14.064L141.262 14.68C141.075 13.2987 140.982 11.3853 140.982 8.93999V1.12799H145.294V20H140.562L136.054 12.188C135.456 11.18 134.924 10.1907 134.458 9.21999C134.01 8.23066 133.702 7.50266 133.534 7.03599L133.31 6.33599C133.59 8.01599 133.73 9.96666 133.73 12.188V20Z"
+          fill="white"></path>
+        <path
+          d="M162.885 19.16C161.746 19.8693 160.104 20.224 157.957 20.224C155.195 20.224 152.88 19.3373 151.013 17.564C149.165 15.772 148.241 13.4573 148.241 10.62C148.241 7.74533 149.137 5.40266 150.929 3.59199C152.74 1.78133 155.092 0.875993 157.985 0.875993C160.113 0.875993 161.746 1.23066 162.885 1.93999V6.08399C161.485 5.22533 159.927 4.79599 158.209 4.79599C156.697 4.79599 155.428 5.32799 154.401 6.39199C153.375 7.43733 152.861 8.84666 152.861 10.62C152.861 12.356 153.375 13.7373 154.401 14.764C155.428 15.772 156.753 16.276 158.377 16.276C160.132 16.276 161.634 15.828 162.885 14.932V19.16Z"
+          fill="white"></path>
+        <path
+          d="M175.409 20H171.097V13.084L164.657 1.12799H169.697L170.845 3.87199C171.442 5.29066 171.937 6.50399 172.329 7.51199C172.721 8.51999 172.973 9.17333 173.085 9.47199L173.225 9.91999C173.412 9.07999 174.233 7.06399 175.689 3.87199L176.921 1.12799H181.933L175.409 13.056V20Z"
+          fill="white"></path>
+      </svg>
+    </a>
+  </div>
+  <nav>
+    <ul>
+      <li {...current === 'company' ? { ...activeClass } : {}}>
+        <a {...current === 'index' ? { 'aria-current': 'page' } : {}} href="/company/">COMPANY</a>
+      </li>
+      <li {...current === 'services' ? { ...activeClass } : {}}>
+        <a {...current === 'index' ? { 'aria-current': 'page' } : {}} href="#">SERVICES</a>
+      </li>
+      <li {...current === 'recruit' ? { ...activeClass } : {}}>
+        <a {...current === 'index' ? { 'aria-current': 'page' } : {}} href="#">RECRUIT</a>
+      </li>
+      <li>
+        <AnchorButton type="ghost" href="/contact/" {...current === 'contact' ? { 'aria-current': 'page' } : {}}>
+          CONTACT
+        </AnchorButton>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .globalHeader {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: var(--color-black);
+    padding: 28px 24px;
+    container-type: inline-size;
+  }
+
+  .globalHeader__siteid {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-white);
+  }
+
+  .globalHeader__siteid a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--color-white);
+  }
+
+  nav {
+    display: inline-flex;
+    align-items: center;
+    margin-inline-start: auto;
+  }
+
+  ul {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  li > a {
+    color: var(--color-white);
+    text-decoration: none;
+    display: inline-block;
+    font-family: var(--font-family-emphasis);
+    font-weight: 700;
+    padding: 16px 0;
+    position: relative;
+  }
+
+  li.active > a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: var(--color-white);
+    left: 0;
+    bottom: 0;
+  }
+
+  li > a:hover {
+    filter: brightness(0.5);
+  }
+
+  @container (max-width: 20rem) {
+    nav {
+      margin-block-start: 8px;
+      margin-inline-start: unset;
+    }
+    ul {
+      display: inline-flex;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+</style>

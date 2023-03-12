@@ -1,0 +1,137 @@
+---
+---
+
+<footer class="globalFooter">
+  <div class="globalFooter__top">
+    <div class="navi">
+      <nav class="navi__menu">
+        <ul>
+          <li><a href="/company/">COMPANY</a></li>
+          <li><a href="#">SERVICES</a></li>
+          <li><a href="#">RECRUIT</a></li>
+          <li><a href="/contact/">CONTACT</a></li>
+        </ul>
+      </nav>
+      <nav class="navi__sns">
+        <ul>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i>INSTAGRAM</a></li>
+          <li><a href="#"><i class="fa-brands fa-tiktok"></i>TIKTOK</a></li>
+          <li><a href="#"><i class="fa-brands fa-twitter"></i>TWITTER</a></li>
+          <li><a href="#"><i class="fa-brands fa-youtube"></i>YOUTUBE</a></li>
+        </ul>
+      </nav>
+    </div>
+    <address class="navi__address">
+      <strong>FAKE AGENCY Inc.</strong><br />
+      ○○○○○○○○<br />
+      Tel: 00-0000-0000<br />
+      Mail: <a href="mailto:info@fake-agency.com">info@fake-agency.com</a>
+    </address>
+  </div>
+  <div class="globalFooter__bottom">
+    <p>&copy; Sample Inc.</p>
+    <nav>
+      <ul>
+        <li><a href="#">プライバシーポリシー</a></li>
+        <li><a href="#">個人情報保護方針</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+<style>
+  a {
+    color: var(--color-white);
+    text-decoration: none;
+  }
+
+  li > a:hover {
+    filter: brightness(0.5);
+  }
+
+  .globalFooter {
+    background-color: var(--color-black);
+    padding: 64px 32px;
+  }
+  .globalFooter__top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  .navi {
+    display: flex;
+    gap: 32px;
+  }
+
+  .navi__menu {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: var(--text-size-l);
+  }
+
+  .navi__menu ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 16px;
+  }
+
+  .navi__menu a {
+    display: inline-flex;
+    font-family: var(--font-family-emphasis);
+    gap: 4px;
+  }
+
+  .navi__sns ul {
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-size: var(--text-size-s);
+    gap: 4px;
+  }
+
+  .navi__sns a {
+    display: inline-flex;
+    gap: 4px;
+    padding: 4px;
+  }
+
+  .navi__address {
+    color: var(--color-white);
+    line-height: 1.5;
+  }
+
+  .navi__address strong {
+    font-size: var(--text-size-l);
+    font-weight: bold;
+  }
+
+  .globalFooter__bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: var(--text-size-m);
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-gray);
+  }
+
+  .globalFooter__bottom p {
+    color: var(--color-white);
+  }
+
+  .globalFooter__bottom ul {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .globalFooter__bottom a {
+    display: inline-block;
+  }
+</style>

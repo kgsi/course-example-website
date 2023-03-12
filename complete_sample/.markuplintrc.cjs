@@ -39,6 +39,12 @@ module.exports = {
     './src/components/Button.astro': {
       rules: {
         'require-accessible-name': false,
+        'invalid-attr': false,
+      },
+    },
+    './src/components/GlobalHeader.astro': {
+      rules: {
+        'invalid-attr': false,
       },
     },
     './src/components/Table.astro': {

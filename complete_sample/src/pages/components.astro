@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Button from '../components/Button.astro'
+import Panel from '../components/Panel.astro'
+import Hero from '../components/Hero.astro'
+import Table from '../components/Table.astro'
+import TopicPath from '../components/TopicPath.astro'
+
+import sample from '../images/sample/image.png'
+---
+
+<BaseLayout title="コンポーネント用ページ" description="コンポーネント用ページ">
+  <Button>テスト</Button>
+  <Button size="s">テスト</Button>
+  <Button type="outline">テスト</Button>
+  <Button type="outline" size="s">テスト</Button>
+  <Panel src={sample} srcAlt="" title="タイトル" herf="/company" />
+  <Hero title="Sample" />
+  <Table>
+    <tbody>
+      <tr>
+        <th>社名</th>
+        <td>XXXXX</td>
+      </tr>
+      <tr>
+        <th>代表取締役</th>
+        <td>XXXXX</td>
+      </tr>
+      <tr>
+        <th>設立</th>
+        <td>XXXXX</td>
+      </tr>
+    </tbody>
+  </Table>
+  <TopicPath topicPathArray={[{ title: 'About', href: '/about' }, { title: 'Contact' }]} />
+</BaseLayout>
