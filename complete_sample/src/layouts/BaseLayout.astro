@@ -25,7 +25,15 @@ const { title, description, current } = Astro.props
   </head>
   <body>
     <GlobalHeader current={current} />
-    <slot />
+    <div class="container">
+      <slot />
+    </div>
     <GlobalFooter />
+    <style>
+      .container {
+        margin-inline: var(--container-margin);
+        line-height: var(--line-height-normal);
+      }
+    </style>
   </body>
 </html>

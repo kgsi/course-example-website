@@ -18,12 +18,11 @@ const { gap = '48px', contentMin = '50%' } = Astro.props
     gap: var(--gap);
   }
 
-  .with-sidebar > :global(:first-child) {
-    text-align: center;
+  .with-sidebar > :global(.side) {
     flex-grow: 1;
   }
 
-  .with-sidebar > :global(:last-child) {
+  .with-sidebar > :global(.main) {
     flex-basis: 0;
     flex-grow: 999;
     min-inline-size: var(--contentMin);

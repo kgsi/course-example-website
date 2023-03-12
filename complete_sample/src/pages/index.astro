@@ -1,7 +1,203 @@
 ---
+import { Image } from '@astrojs/image/components'
+
+import IndexVisual from '../components/pages/index/IndexVisual.astro'
+
 import BaseLayout from '../layouts/BaseLayout.astro'
+import Stack from '../components/layouts/Stack.astro'
+import Sidebar from '../components/layouts/Sidebar.astro'
+import Center from '../components/layouts/Center.astro'
+import Grid from '../components/layouts/Grid.astro'
+import AnchorButton from '../components/AnchorButton.astro'
+import Panel from '../components/Panel.astro'
+
+import works01 from '../images/index/img-works01.png'
+import works02 from '../images/index/img-works02.png'
+import works03 from '../images/index/img-works03.png'
+import works04 from '../images/index/img-works04.png'
+import works05 from '../images/index/img-works05.png'
+import works06 from '../images/index/img-works06.png'
+
+import about from '../images/index/img-about.png'
 ---
 
-<BaseLayout title="TOPページ" description="TOPページです。" current="index" />
+<BaseLayout title="TOPページ" description="TOPページです。" current="index">
+  <section>
+    <IndexVisual />
+  </section>
+  <section>
+    <Center>
+      <header class="works__header">
+        <h2>WORKS</h2>
+      </header>
+      <Grid itemWidth="400px">
+        <Panel herf="#" src={works01} title="パッケージビジュアルの制作" srcAlt="" />
+        <Panel herf="#" src={works02} title="パッケージビジュアルの制作" srcAlt="" />
+        <Panel herf="#" src={works03} title="パッケージビジュアルの制作" srcAlt="" />
+        <Panel herf="#" src={works04} title="パッケージビジュアルの制作" srcAlt="" />
+        <Panel herf="#" src={works05} title="パッケージビジュアルの制作" srcAlt="" />
+        <Panel herf="#" src={works06} title="パッケージビジュアルの制作" srcAlt="" />
+      </Grid>
+      <footer class="works__footer">
+        <AnchorButton type="outline" href="#">一覧を見る</AnchorButton>
+      </footer>
+    </Center>
+  </section>
+  <section class="about">
+    <Sidebar contentMin="40%">
+      <div class="side about__side">
+        <Image src={about} alt="" />
+      </div>
+      <div class="main about__main">
+        <h2>新しい可能性を創造し、 未来を共に切り開く</h2>
+        <p>
+          「最初にトライしてみよう」という挑戦心と推進力を持って、企業と共に歩みます。
+          未来のゲームチェンジャーの「最初にトライしてみよう」を実現する』ことが、創業以来、すべてのサービスを継続的に発展させてきた原動力です。インターネットやスマートフォンの普及により、環境は日々変化しています。現状を維持し続けるだけでは、企業は衰退してしまいます。新しいことに挑戦しなければ、革新的なビジネスは生まれません。2020年代以降、低成長が続いた日本の経済を打破したいという強い想いから、「最初にトライしてみよう」という挑戦心と推進力を持って、ビッグデータとアルゴリズムの領域で企業と共に歩み、効率化や問題解決を追求したシステムの開拓により、社会の革新を支援します。
+        </p>
+        <p><AnchorButton href="#">詳しく見る</AnchorButton></p>
+      </div>
+    </Sidebar>
+  </section>
+  <section class="news">
+    <header class="works__header">
+      <h2>NEWS</h2>
+    </header>
+    <ul class="news__list">
+      <li class="list">
+        <p class="list__date">2023/02/22</p>
+        <a class="list__title" href="#">役員の異動に関するお知らせ</a>
+      </li>
+      <li class="list">
+        <p class="list__date">2023/02/22</p>
+        <a class="list__title" href="#">役員の異動に関するお知らせ</a>
+      </li>
+      <li class="list">
+        <p class="list__date">2023/02/22</p>
+        <a class="list__title" href="#">役員の異動に関するお知らせ役員の異動に関するお知らせ役員の異動に関するお知らせ</a>
+      </li>
+    </ul>
+  </section>
+  <section class="recuit">
+    <Center>
+      <div class="recuit__body">
+        <h2>新しい挑戦をしたい人に<br />創造的で革新的な環境を。</h2>
+        <p><AnchorButton type="ghost" href="#">JOIN TEAM</AnchorButton></p>
+      </div>
+    </Center>
+  </section>
+  <section class="contact">
+    <div class="contact__text">
+      <h2>CONTACT</h2>
+      <p>制作・採用等に関するお問い合わせやご質問など、お気軽にお問い合わせください。</p>
+    </div>
+    <div class="contact__link">
+      <AnchorButton type="outline" href="/contact/">CONTACT</AnchorButton>
+    </div>
+  </section>
+</BaseLayout>
 
-<style></style>
+<style>
+  h2 {
+    font-family: 'Syne';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 125%;
+  }
+  .works__header + :global(*) {
+    margin-block-start: 16px;
+  }
+  .works__footer {
+    margin-block-start: 16px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about {
+    background-color: var(--color-column);
+    margin-inline: calc(50% - (50vw - var(--scrollbar) / 2));
+    padding-inline: var(--container-margin);
+    padding-block: 96px;
+  }
+
+  .about__side img {
+    width: 100%;
+    height: auto;
+  }
+  .about__main {
+    width: 100%;
+    height: auto;
+  }
+
+  .about__main h2 {
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 125%;
+  }
+
+  .about__main p {
+    margin-top: 24px;
+    font-size: 16px;
+    line-height: 180%;
+  }
+  .about__main p + p {
+    margin-top: 48px;
+  }
+
+  .news__list .list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 64px;
+    border-bottom: 1px solid black;
+    padding-block: 32px;
+    padding-inline: 16px;
+  }
+
+  .news__list .list__date {
+    font-weight: bold;
+  }
+
+  .news__list .list__title:hover {
+    text-decoration: none;
+  }
+
+  .recuit {
+    background-color: var(--color-black);
+    background-image: url('/bg-recruit.png');
+    background-size: cover;
+    margin-inline: calc(50% - (50vw - var(--scrollbar) / 2));
+    padding-inline: var(--container-margin);
+    padding-block: 96px;
+    color: white;
+  }
+  .recuit__body {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .recuit__body h2 {
+    font-size: clamp(32px, 5vw, 64px);
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact {
+    border-top: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 72px;
+  }
+  .contact__text {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-inline-size: 60%;
+  }
+  .contact__link {
+    flex-grow: 1;
+  }
+</style>

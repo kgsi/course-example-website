@@ -1,0 +1,60 @@
+---
+import { Image } from '@astrojs/image/components'
+
+import Sidebar from '../../layouts/Sidebar.astro'
+import Center from '../../layouts/Center.astro'
+import AnchorButton from '../../AnchorButton.astro'
+
+import mainvisual from '../../../images/index/img-mainvisual.png'
+---
+
+<Center>
+  <Sidebar contentMin="40%">
+    <div class="main hero__text">
+      <h1 class="hero__title">We are a digital agency from Japan.</h1>
+      <p class="hero__description">
+        FAKE AGENCYは企業のブランドを魅力的にアップデートするためのクリエイティブソリューションを提供するエージェンシーです。
+      </p>
+      <p class="hero__link">
+        <AnchorButton href="/company/">会社紹介</AnchorButton>
+      </p>
+    </div>
+    <div class="side hero__visual">
+      <Image src={mainvisual} alt="" width={500} />
+    </div>
+  </Sidebar>
+</Center>
+
+<style>
+  .hero__text {
+  }
+
+  .hero__title {
+    font-family: 'Syne';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4.6rem;
+    line-height: 1;
+
+    background: linear-gradient(128.99deg, #8c00db 27.63%, #dd63a3 69.13%, #9b0038 95.39%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+
+  .hero__visual img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hero__description {
+    margin-block-start: 8px;
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  .hero__link {
+    margin-block-start: 48px;
+  }
+</style>

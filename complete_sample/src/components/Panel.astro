@@ -19,11 +19,12 @@ const { src, srcAlt = '', title, herf } = Astro.props
         <Image src={src} alt={srcAlt} width={400} height={240} />
       </figure>
     </div>
-    <Stack gap="8px">
-      <p class="panel__title">{title}</p>
-      <p class="panel__link"><a href={herf}>詳細を見る<i class="fa-solid fa-arrow-right"></i></a></p>
-      <Stack />
-    </Stack>
+    <div class="panel__body">
+      <Stack gap="8px">
+        <p class="panel__title">{title}</p>
+        <p class="panel__link"><a href={herf}>詳細を見る<i class="fa-solid fa-arrow-right"></i></a></p>
+      </Stack>
+    </div>
   </Stack>
 </div>
 
@@ -33,6 +34,10 @@ const { src, srcAlt = '', title, herf } = Astro.props
     font-weight: bold;
   }
 
+  .panel__thumbnail img {
+    width: 100%;
+    height: auto;
+  }
   .panel__link a {
     font-weight: bold;
     text-decoration: none;
