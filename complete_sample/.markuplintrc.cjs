@@ -53,4 +53,5 @@ module.exports = {
       },
     },
   },
+  excludeFiles: ['./src/components/TopicPath.astro'],
 }

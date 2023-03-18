@@ -6,7 +6,7 @@ name: lint
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   pull_request:
-    branches: [test-feature]
+    branches: [main]
 
   workflow_dispatch:
 
