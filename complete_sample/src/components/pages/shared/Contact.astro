@@ -1,0 +1,40 @@
+---
+import AnchorButton from '../../AnchorButton.astro'
+---
+
+<div class="contact">
+  <div class="contact__text">
+    <h2>CONTACT</h2>
+    <p>制作・採用等に関するお問い合わせやご質問など、お気軽にお問い合わせください。</p>
+  </div>
+  <div class="contact__link">
+    <AnchorButton type="outline" href="/contact/">CONTACT</AnchorButton>
+  </div>
+</div>
+
+<style>
+  .contact {
+    border-top: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 72px;
+  }
+  .contact__text {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-inline-size: 60%;
+  }
+  .contact__text > h2 {
+    font-family: 'Syne';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 125%;
+  }
+  .contact__link {
+    flex-grow: 1;
+  }
+</style>

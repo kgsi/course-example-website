@@ -1,9 +1,178 @@
 ---
+import { Image } from '@astrojs/image/components'
+
 import BaseLayout from '../../layouts/BaseLayout.astro'
+import MediaSidebar from '../../components/pages/shared/MediaSidebar.astro'
+import Table from '../../components/Table.astro'
+import Grid from '../../components/layouts/Grid.astro'
+import Stack from '../../components/layouts/Stack.astro'
+
+import Contact from '../../components/pages/shared/Contact.astro'
+import Member from '../../components/pages/company/Member.astro'
+
+import Hero from '../../components/Hero.astro'
+import TopicPath from '../../components/TopicPath.astro'
+import SeparateCover from '../../components/SeparateCover.astro'
+
+import about01 from '../../images/company/img-about01.png'
+import about02 from '../../images/company/img-about02.png'
+
+import menberMiranda from '../../images/company/img-thumb-miranda.png'
+import menberKelly from '../../images/company/img-thumb-kelly.png'
+import menberBertie from '../../images/company/img-thumb-bertie.png'
 ---
 
 <BaseLayout title="会社概要" description="会社概要ページです。" current="company">
   <main>
-    <h1>会社概要</h1>
+    <Hero title="COMPANY" />
+    <Stack gap="192px" mobileGap="96px">
+      <div class="topicPath">
+        <TopicPath topicPathArray={[{ title: 'COMPANY' }]} />
+      </div>
+      <section class="message">
+        <Stack gap="24px">
+          <header class="message__header">
+            <h2>We are a digital agency from Japan.</h2>
+          </header>
+          <div class="message__text">
+            <p>
+              FAKE
+              AGENCYは「かっこいい」をモットーに、企業のブランドを魅力的にアップデートするためのクリエイティブソリューションを提供するエージェンシーです。私たちのミッションは、「未来を変える、最初の一歩を踏み出す」ことです。常に新しいことに挑戦し、既成概念を打ち破りながら、革新的なアイデアを生み出し、お客様のブランドを成功に導くために尽力します。
+              ブランディング、WEBサイト制作、グラフィックデザイン、動画制作などのサービスを通じて、お客様のビジネスをサポートします。また、ビッグデータやアルゴリズムを活用したオンラインマーケティングも提供し、効率的な宣伝手法を提供します。
+            </p>
+            <p>
+              私たちのクリエイティブチームは、常に最新のトレンドや技術を追求し、業界の最先端の技術を駆使して、お客様のニーズに合ったソリューションを提供します。そして、お客様の成功に向けて、常にお客様と協力しながら、最適な戦略を立てます。
+              FAKE
+              AGENCYは、お客様の「かっこいい」な未来を共に創造するパートナーとして、常にお客様に寄り添ってサポートいたします。お客様のブランドを魅力的にアップデートし、ビジネスを成功に導くために、Cacco
+              Creative Agencyと一緒に「最初の一歩」を踏み出しましょう。
+            </p>
+          </div>
+        </Stack>
+      </section>
+      <section>
+        <SeparateCover>
+          <MediaSidebar src={about01}>
+            <h2>新しい可能性を創造し、 未来を共に切り開く</h2>
+            <p>
+              「最初にトライしてみよう」という挑戦心と推進力を持って、企業と共に歩みます。
+              未来のゲームチェンジャーの「最初にトライしてみよう」を実現する』ことが、創業以来、すべてのサービスを継続的に発展させてきた原動力です。インターネットやスマートフォンの普及により、環境は日々変化しています。現状を維持し続けるだけでは、企業は衰退してしまいます。新しいことに挑戦しなければ、革新的なビジネスは生まれません。2020年代以降、低成長が続いた日本の経済を打破したいという強い想いから、「最初にトライしてみよう」という挑戦心と推進力を持って、ビッグデータとアルゴリズムの領域で企業と共に歩み、効率化や問題解決を追求したシステムの開拓により、社会の革新を支援します。
+            </p>
+          </MediaSidebar>
+        </SeparateCover>
+      </section>
+      <section>
+        <MediaSidebar src={about02} isReverse={true}>
+          <h2>現状を打破し、 新しい可能性を創造する</h2>
+          <p>
+            「まずやってみよう」の挑戦心と推進力で、企業と伴走する。
+            創業以来、すべてのサービスを発展させ続けてきたかっこの原動力が、Cacco Evolutionary
+            Purpose（EP）『未来のゲームチェンジャーの「まずやってみよう」をカタチに』です。インターネットやスマートフォンの普及に伴い、目まぐるしく環境が変わる日々の中、現状維持にとどまっていては、企業は衰退してしまいます。新しいことに挑戦しなければ、革新的なビジネスは生まれません。2000年代以降、低成長が続いたこの日本の経済を打破したい。かっこはそんな強い想いから、「まずやってみよう」の挑戦心と推進力とともに、ビッグデータとアルゴリズムの領域で企業と伴走するサービスを提供しています。既成概念を取り払い、効率化や問題解決を追求したシステムを開拓することで、社会の革新を支援します。
+          </p>
+        </MediaSidebar>
+      </section>
+      <section>
+        <SeparateCover backgroundColor="#000">
+          <Grid gap="72px">
+            <Member
+              src={menberMiranda}
+              title="CEO"
+              name="Miranda Hamilton"
+              description="グローバルなIT企業のCEOであり、テクノロジー業界で30年以上の経験を持つ。多様性と包括性を重視し、環境に配慮したビジネス実践の推進にも取り組んでいる。"
+            />
+            <Member
+              src={menberKelly}
+              title="CTO"
+              name="Kelly Grant Dawkins"
+              description="多くのIT関連のスキルを持ち、技術革新に敏感な経営者。特にデータ分析に熟練しており、ビッグデータを活用したオンラインマーケティングに長けている。"
+            />
+            <Member
+              src={menberBertie}
+              title="CFO"
+              name="Bertie Milne"
+              description="財務に熟練している経営者であり、長年にわたる財務経験を持ち、財務戦略の立て方に長けている。特に、財務モデルの作成や投資評価に熟練しており、多くの企業の成長を支援してきた。"
+            />
+          </Grid>
+        </SeparateCover>
+      </section>
+      <section>
+        <div class="info">
+          <div class="info__title">
+            <h2>会社情報</h2>
+          </div>
+          <div class="info__data">
+            <Table>
+              <tr>
+                <th>会社名</th>
+                <td>Web Solutions</td>
+              </tr>
+              <tr>
+                <th>所在地</th>
+                <td>東京都新宿区三越前</td>
+              </tr>
+              <tr>
+                <th>設立</th>
+                <td>2015年</td>
+              </tr>
+              <tr>
+                <th>所在地</th>
+                <td>東京都新宿区三越前</td>
+              </tr>
+              <tr>
+                <th>得意な技術</th>
+                <td>HTML、CSS、JavaScript、PHP、WordPress</td>
+              </tr>
+              <tr>
+                <th>取り扱い製品</th>
+                <td>レスポンシブWebデザイン、SEO対策、コンテンツマーケティングコンテンツマーケティング</td>
+              </tr>
+            </Table>
+          </div>
+        </div>
+      </section>
+      <section>
+        <Contact />
+      </section>
+    </Stack>
   </main>
 </BaseLayout>
+
+<style>
+  .topicPath {
+    margin-top: 24px;
+  }
+  .message {
+  }
+  .message__header h2 {
+    font-size: var(--text-size-3xl);
+    font-family: var(--font-family-emphasis);
+    line-height: var(--line-height-none);
+  }
+  .info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: space-between;
+    container-type: inline-size;
+  }
+  .info__title {
+    font-size: var(--text-size-xl);
+    font-weight: bold;
+  }
+
+  @container (max-width: 480px) {
+    .info__data {
+      width: 100%;
+    }
+  }
+
+  .message__text {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .message__text > p {
+    flex-basis: 20rem;
+    flex-grow: 1;
+    line-height: var(--line-height-relux);
+  }
+</style>

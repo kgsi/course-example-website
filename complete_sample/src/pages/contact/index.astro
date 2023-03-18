@@ -2,131 +2,171 @@
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import Button from '../../components/Button.astro'
 import Stack from '../../components/layouts/Stack.astro'
+import Hero from '../../components/Hero.astro'
+import TopicPath from '../../components/TopicPath.astro'
 ---
 
 <BaseLayout title="お問い合わせ" description="お問い合わせページです。" current="contact">
   <main>
-    <h1>お問い合わせ</h1>
-    <form>
-      <Stack gap="4px">
-        <label for="subject">お問い合わせ件名</label>
-        <input id="subject" type="text" value="input" />
-      </Stack>
-      <Stack gap="4px">
-        <label for="kind">お問い合わせの種類</label>
-        <div class="select">
-          <select name="kind" id="kind">
-            <option value="採用">採用</option>
-            <option value="仕事ご依頼">仕事ご依頼</option>
-            <option value="その他">その他</option>
-          </select>
-          <div class="select-suffix">
-            <span class="arrow down"></span>
-          </div>
-        </div>
-      </Stack>
-      <Stack gap="4px">
-        <label for="mail">メールアドレス</label>
-        <input id="mail" type="text" value="input" />
-      </Stack>
-      <Stack gap="4px">
-        <label for="tel">電話番号<span class="label-status">任意</span></label>
-        <input id="tel" type="text" value="input" />
-      </Stack>
-      <Stack gap="4px">
-        <label for="name">氏名<span class="label-status">任意</span></label>
-        <input id="name" type="text" value="input" />
-      </Stack>
-      <Stack gap="4px">
-        <label for="content">お問い合わせ内容</label>
-        <textarea name="content" id="content" cols="30" rows="10"></textarea>
-      </Stack>
-      <Stack gap="4px">
-        <label class="check">
-          <input type="checkbox" name="confirm" checked="checked" />
-          ご提供いただく個人情報の取り扱い方針に同意する。
-        </label>
-      </Stack>
-      <div>
-        <Button>送信</Button>
+    <Hero title="CONTACT" />
+    <Stack gap="192px" mobileGap="96px">
+      <div class="topicPath">
+        <TopicPath topicPathArray={[{ title: 'CONTACT' }]} />
       </div>
-    </form>
+      <div class="content">
+        <div class="content__description">
+          <p>お問い合わせフォームよりご連絡ください。<br />商品やサービスの営業のご投稿はご遠慮ください。</p>
+        </div>
+        <div class="content__form">
+          <form>
+            <Stack gap="4px">
+              <label for="subject">お問い合わせ件名</label>
+              <input id="subject" type="text" value="input" />
+            </Stack>
+            <Stack gap="4px">
+              <label for="kind">お問い合わせの種類</label>
+              <div class="select">
+                <select name="kind" id="kind">
+                  <option value="採用">採用</option>
+                  <option value="仕事ご依頼">仕事ご依頼</option>
+                  <option value="その他">その他</option>
+                </select>
+                <div class="select-suffix">
+                  <span class="arrow down"></span>
+                </div>
+              </div>
+            </Stack>
+            <Stack gap="4px">
+              <label for="mail">メールアドレス</label>
+              <input id="mail" type="text" value="input" />
+            </Stack>
+            <Stack gap="4px">
+              <label for="tel">電話番号<span class="label-status">任意</span></label>
+              <input id="tel" type="text" value="input" />
+            </Stack>
+            <Stack gap="4px">
+              <label for="name">氏名<span class="label-status">任意</span></label>
+              <input id="name" type="text" value="input" />
+            </Stack>
+            <Stack gap="4px">
+              <label for="content">お問い合わせ内容</label>
+              <textarea name="content" id="content" cols="30" rows="10"></textarea>
+            </Stack>
+            <Stack gap="4px">
+              <label class="check">
+                <input type="checkbox" name="confirm" checked="checked" />
+                ご提供いただく個人情報の取り扱い方針に同意する。
+              </label>
+            </Stack>
+            <div>
+              <Button>送信</Button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </Stack>
   </main>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .topicPath {
+      margin-top: 24px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    input[type='checkbox'] {
+      accent-color: var(--color-black);
+      border: 1px solid var(--color-black);
+    }
+    label {
+      font-weight: bold;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    label.check {
+      flex-wrap: nowrap;
+      align-items: flex-start;
+    }
+    form :is(input, textarea) {
+      border: 1px solid var(--color-black);
+      padding: 8px;
+      line-height: 1;
+    }
+    .label-status {
+      font-size: var(--text-size-s);
+      border: 1px solid var(--color-gray);
+      display: inline-flex;
+      align-items: center;
+      line-height: 1;
+      padding: 0 8px;
+    }
+    select {
+      appearance: none;
+      cursor: pointer;
+      outline: none;
+      border: 1px solid var(--color-black);
+      line-height: 1;
+      padding: 12px 32px 12px 8px;
+    }
+
+    .select {
+      position: relative;
+      box-sizing: border-box;
+      width: fit-content;
+    }
+    .select-suffix {
+      pointer-events: none;
+      position: absolute;
+      top: 0px;
+      right: 12px;
+      bottom: 0px;
+      display: inline-flex;
+      align-items: center;
+    }
+    select:focus {
+      outline: -webkit-focus-ring-color auto 1px;
+    }
+    .arrow {
+      border: solid var(--color-black);
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+    }
+    .down {
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+    }
+    :is(input[type='text'], .select, select, textarea) {
+      width: 100%;
+    }
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 92px;
+      margin-block-end: 164px;
+    }
+    .content__description {
+    }
+    .content__form {
+      flex-shrink: 1;
+      flex-grow: 1;
+      flex-basis: 480px;
+      container-type: inline-size;
+    }
+
+    @container (max-width: 720px) {
+      .content {
+        gap: 32px;
+        margin-block-end: 82px;
+      }
+    }
+  </style>
 </BaseLayout>
-
-<style>
-  * {
-    box-sizing: border-box;
-  }
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-  input[type='checkbox'] {
-    accent-color: var(--color-black);
-    border: 1px solid var(--color-black);
-  }
-  label {
-    font-weight: bold;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  label.check {
-    flex-wrap: nowrap;
-    align-items: flex-start;
-  }
-  form :is(input, textarea) {
-    border: 1px solid var(--color-black);
-    padding: 8px;
-    line-height: 1;
-  }
-  .label-status {
-    font-size: var(--text-size-s);
-    border: 1px solid var(--color-gray);
-    display: inline-flex;
-    align-items: center;
-    line-height: 1;
-    padding: 0 8px;
-  }
-  select {
-    appearance: none;
-    cursor: pointer;
-    outline: none;
-    border: 1px solid var(--color-black);
-    line-height: 1;
-    padding: 12px 32px 12px 8px;
-  }
-
-  .select {
-    position: relative;
-    box-sizing: border-box;
-    width: fit-content;
-  }
-  .select-suffix {
-    pointer-events: none;
-    position: absolute;
-    top: 0px;
-    right: 12px;
-    bottom: 0px;
-    display: inline-flex;
-    align-items: center;
-  }
-  select:focus {
-    outline: -webkit-focus-ring-color auto 1px;
-  }
-  .arrow {
-    border: solid var(--color-black);
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 3px;
-  }
-  .down {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-  }
-  :is(input[type='text'], .select, select, textarea) {
-    width: 100%;
-  }
-</style>

@@ -5,7 +5,7 @@ export interface Props {
   href: string
 }
 
-const { type = 'primary', size = 'm', href, ...props } = Astro.props
+const { type = 'primary', size = 'l', href, ...props } = Astro.props
 ---
 
 <a class={`button -type-${type} -size-${size}`} href={href} {...props}><slot /></a>
@@ -30,11 +30,14 @@ const { type = 'primary', size = 'm', href, ...props } = Astro.props
     filter: brightness(0.8);
   }
 
+  .-size-l {
+    font-size: var(--text-size-l);
+    padding: 12px 48px;
+  }
   .-size-m {
     font-size: var(--text-size-m);
     padding: 12px 48px;
   }
-
   .-size-s {
     font-size: var(--text-size-s);
     padding: 8px 24px;

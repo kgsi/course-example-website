@@ -1,0 +1,19 @@
+---
+export interface Props {
+  backgroundColor?: string
+}
+const { backgroundColor = '#f6f6f6' } = Astro.props
+---
+
+<div class="separateCover">
+  <slot />
+</div>
+
+<style define:vars={{ backgroundColor }}>
+  .separateCover {
+    background-color: var(--backgroundColor);
+    margin-inline: calc(50% - (50vw - var(--scrollbar) / 2));
+    padding-inline: var(--container-margin);
+    padding-block: 96px;
+  }
+</style>

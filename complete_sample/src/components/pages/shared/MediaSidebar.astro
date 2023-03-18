@@ -1,0 +1,51 @@
+---
+import { Image } from '@astrojs/image/components'
+
+import Sidebar from '../../layouts/Sidebar.astro'
+import Cover from '../../layouts/Cover.astro'
+
+export interface Props {
+  src: string
+  alt?: string
+  isReverse?: boolean
+}
+
+const { src, alt = '', isReverse = false } = Astro.props
+---
+
+<Sidebar contentMin="40%" isReverse={isReverse}>
+  <div class="side mediaSidebar__side">
+    <Image src={src} alt={alt} />
+  </div>
+  <div class="main mediaSidebar__main">
+    <Cover minHight="100%">
+      <slot />
+    </Cover>
+  </div>
+</Sidebar>
+
+<style>
+  .mediaSidebar__side img {
+    width: 100%;
+    height: auto;
+  }
+  .mediaSidebar__main {
+    width: 100%;
+    height: auto;
+  }
+
+  .mediaSidebar__main :global(h2) {
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 125%;
+  }
+
+  .mediaSidebar__main :global(p) {
+    margin-top: 24px;
+    font-size: 16px;
+    line-height: 180%;
+  }
+  .mediaSidebar__main :global(p + p) {
+    margin-top: 48px;
+  }
+</style>

@@ -65,7 +65,7 @@ const { current = 'index' } = Astro.props
         <a {...current === 'index' ? { 'aria-current': 'page' } : {}} href="#">RECRUIT</a>
       </li>
       <li>
-        <AnchorButton type="ghost" href="/contact/" {...current === 'contact' ? { 'aria-current': 'page' } : {}}>
+        <AnchorButton type="ghost" size="m" href="/contact/" {...current === 'contact' ? { 'aria-current': 'page' } : {}}>
           CONTACT
         </AnchorButton>
       </li>
@@ -142,6 +142,9 @@ const { current = 'index' } = Astro.props
       align-items: flex-start;
       flex-direction: column;
       gap: 8px;
+    }
+    li > a {
+      padding: 8px 0;
     }
   }
 </style>

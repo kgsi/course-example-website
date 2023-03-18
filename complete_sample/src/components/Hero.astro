@@ -25,5 +25,7 @@ const { title } = Astro.props
     font-family: var(--font-family-emphasis);
     font-weight: 400;
     text-transform: uppercase;
+    margin-inline: calc(50% - (50vw - var(--scrollbar) / 2));
+    padding-inline: var(--container-margin);
   }
 </style>

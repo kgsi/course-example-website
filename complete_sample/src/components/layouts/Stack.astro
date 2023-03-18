@@ -1,20 +1,22 @@
 ---
 export interface Props {
   gap?: string
+  mobileGap?: string
 }
 
-const { gap = '16px' } = Astro.props
+const { gap = '16px', mobileGap = '16px' } = Astro.props
 ---
 
 <div class="stack">
   <slot />
 </div>
 
-<style define:vars={{ gap }}>
+<style define:vars={{ gap, mobileGap }}>
   .stack {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    container-type: inline-size;
   }
 
   .stack > :global(*) {
@@ -23,5 +25,11 @@ const { gap = '16px' } = Astro.props
 
   .stack > :global(* + *) {
     margin-block-start: var(--gap);
+  }
+
+  @container (max-width: 480px) {
+    .stack > :global(* + *) {
+      margin-block-start: var(--mobileGap);
+    }
   }
 </style>

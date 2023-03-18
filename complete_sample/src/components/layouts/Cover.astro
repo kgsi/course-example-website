@@ -14,18 +14,12 @@ const { minHight = '50vh' } = Astro.props
 
 <style define:vars={{ minHight }}>
   .cover {
-    align-items: center;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     min-block-size: var(--minHight);
   }
 
   .cover__inner {
     margin-block: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
   }
 </style>

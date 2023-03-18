@@ -2,12 +2,13 @@
 export interface Props {
   gap?: string
   contentMin?: string
+  isReverse?: boolean
 }
 
-const { gap = '48px', contentMin = '50%' } = Astro.props
+const { gap = '48px', contentMin = '50%', isReverse = false } = Astro.props
 ---
 
-<div class="with-sidebar">
+<div class={`with-sidebar ${isReverse && '-direction-reverse'}`}>
   <slot />
 </div>
 
@@ -16,6 +17,10 @@ const { gap = '48px', contentMin = '50%' } = Astro.props
     display: flex;
     flex-wrap: wrap;
     gap: var(--gap);
+  }
+
+  .with-sidebar.-direction-reverse {
+    flex-direction: row-reverse;
   }
 
   .with-sidebar > :global(.side) {
