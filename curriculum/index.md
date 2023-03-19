@@ -5,6 +5,7 @@ Index
 
 - このドキュメントは[Coloso](https://coloso.jp/)で配信している[原理原則による実践的Webサイト設計 with Astro](https://coloso.jp/programming/productdesigner-kogiso-jp)のドキュメントです。
 - リンクが貼られていない講義やデザインファイルは公開していません。
+- ドキュメントに誤りがあった場合や更新が必要な箇所は予告なく更新、編集する可能性があります。予めご了承ください。
 
 ## Section01 イントロダクション
 
