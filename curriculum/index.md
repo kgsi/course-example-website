@@ -3,8 +3,8 @@ Index
 
 ## はじめに
 
-- このドキュメントは[Coloso](https://coloso.jp/)で配信している[原理原則による実践的Webサイト設計 with Astro](https://coloso.jp/programming/productdesigner-kogiso-jp)の技術パートのドキュメントです。
-- リンクが貼られていない、技術パート以外の講義は一般公開はしていません。
+- このドキュメントは[Coloso](https://coloso.jp/)で配信している[原理原則による実践的Webサイト設計 with Astro](https://coloso.jp/programming/productdesigner-kogiso-jp)のドキュメントです。
+- リンクが貼られていない講義やデザインファイルは公開していません。
 
 ## Section01 イントロダクション
 
@@ -47,4 +47,4 @@ Index
 
 ## Section06 おわりに
 
-- 25:エンジニアリングとデザインの狭間
+- [25:エンジニアリングとデザインの狭間](section06/25.md)
