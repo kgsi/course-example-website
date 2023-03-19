@@ -1,0 +1,40 @@
+.button {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 99em;
+  border: 1px solid var(--color-black);
+  font-weight: bold;
+  line-height: var(--line-height-none);
+}
+
+.button:hover {
+  filter: brightness(0.8);
+}
+
+.sizeL {
+  font-size: var(--text-size-l);
+  padding: 12px 48px;
+}
+.sizeM {
+  font-size: var(--text-size-m);
+  padding: 12px 48px;
+}
+.sizeS {
+  font-size: var(--text-size-s);
+  padding: 8px 24px;
+}
+
+.typePrimary {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+.typeOutline {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}

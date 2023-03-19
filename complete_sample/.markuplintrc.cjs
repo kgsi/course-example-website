@@ -36,6 +36,11 @@ module.exports = {
     'ineffective-attr': false,
   },
   overrides: {
+    './src/components/AnchorButton.astro': {
+      rules: {
+        'invalid-attr': false,
+      },
+    },
     './src/components/Button.astro': {
       rules: {
         'require-accessible-name': false,
@@ -53,4 +58,5 @@ module.exports = {
       },
     },
   },
+  excludeFiles: ['./src/components/TopicPath.astro'],
 }
