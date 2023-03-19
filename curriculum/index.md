@@ -41,9 +41,9 @@ Index
 
 ## Section05 より高度な作成
 
-- [22:チームと作るために](section04/22.md)
-- [23:コンポーネントのカタログ化](section04/23.md)
-- [24:CI/CD](section04/24.md)
+- [22:チームと作るために](section05/22.md)
+- [23:コンポーネントのカタログ化](section05/23.md)
+- [24:CI/CD](section05/24.md)
 
 ## Section06 おわりに
 
