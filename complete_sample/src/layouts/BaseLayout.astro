@@ -16,11 +16,34 @@ const { title, description, current } = Astro.props
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <SEO title={title} description={description} />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <SEO
+      charset="UTF-8"
+      description={description}
+      openGraph={{
+        basic: {
+          title: title,
+          type: `${current === 'index' ? 'website' : 'article'}`,
+          image: 'https://xxx.com/ogimage.png',
+        },
+        image: {
+          alt: 'Sample Website Design - Powered by Coloso',
+        },
+      }}
+      extend={{
+        link: [
+          { rel: 'icon', href: '/favicon.ico' },
+          { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
+          { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
+          { rel: 'manifest', href: '/site.webmanifest' },
+        ],
+        meta: [
+          { name: 'viewport', content: 'width=device-width' },
+          { name: 'generator', content: Astro.generator },
+          { name: 'theme-color"', content: '#4a4a4a' },
+        ],
+      }}
+    />
+    <title>{title}</title>
     <GlobalStyle />
   </head>
   <body>
