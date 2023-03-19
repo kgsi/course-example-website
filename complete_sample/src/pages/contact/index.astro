@@ -91,7 +91,6 @@ import TopicPath from '../../components/TopicPath.astro'
     }
     label.check {
       flex-wrap: nowrap;
-      align-items: flex-start;
     }
     form :is(input, textarea) {
       border: 1px solid var(--color-black);
@@ -150,10 +149,11 @@ import TopicPath from '../../components/TopicPath.astro'
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 92px;
+      gap: 32px;
       margin-block-end: 164px;
     }
     .content__description {
+      padding-inline-end: 48px;
     }
     .content__form {
       flex-shrink: 1;
@@ -166,6 +166,9 @@ import TopicPath from '../../components/TopicPath.astro'
       .content {
         gap: 32px;
         margin-block-end: 82px;
+      }
+      .content__description {
+        padding-inline-end: unset;
       }
     }
   </style>

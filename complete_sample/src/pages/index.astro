@@ -21,76 +21,80 @@ import works06 from '../images/index/img-works06.png'
 import about from '../images/index/img-about.png'
 ---
 
-<BaseLayout title="TOPページ" description="TOPページです。" current="index">
-  <Stack gap="192px" mobileGap="96px">
-    <section class="indexVisual">
-      <IndexVisual />
-    </section>
-    <section>
-      <Center>
+<BaseLayout title="TOPページ" description="TOPページです。TOPページです。TOPページです。" current="index">
+  <main>
+    <Stack gap="192px" mobileGap="96px">
+      <section class="indexVisual">
+        <IndexVisual />
+      </section>
+      <section>
+        <Center>
+          <header class="works__header">
+            <h2>WORKS</h2>
+          </header>
+          <Grid itemWidth="400px">
+            <Panel herf="#" src={works01} title="パッケージビジュアルの制作" srcAlt="" />
+            <Panel herf="#" src={works02} title="パッケージビジュアルの制作" srcAlt="" />
+            <Panel herf="#" src={works03} title="パッケージビジュアルの制作" srcAlt="" />
+            <Panel herf="#" src={works04} title="パッケージビジュアルの制作" srcAlt="" />
+            <Panel herf="#" src={works05} title="パッケージビジュアルの制作" srcAlt="" />
+            <Panel herf="#" src={works06} title="パッケージビジュアルの制作" srcAlt="" />
+          </Grid>
+          <footer class="works__footer">
+            <AnchorButton type="outline" href="#">一覧を見る</AnchorButton>
+          </footer>
+        </Center>
+      </section>
+      <section>
+        <SeparateCover>
+          <Center>
+            <MediaSidebar src={about}>
+              <h2>新しい可能性を創造し、 未来を共に切り開く</h2>
+              <p>
+                「最初にトライしてみよう」という挑戦心と推進力を持って、企業と共に歩みます。
+                未来のゲームチェンジャーの「最初にトライしてみよう」を実現する』ことが、創業以来、すべてのサービスを継続的に発展させてきた原動力です。インターネットやスマートフォンの普及により、環境は日々変化しています。現状を維持し続けるだけでは、企業は衰退してしまいます。新しいことに挑戦しなければ、革新的なビジネスは生まれません。2020年代以降、低成長が続いた日本の経済を打破したいという強い想いから、「最初にトライしてみよう」という挑戦心と推進力を持って、ビッグデータとアルゴリズムの領域で企業と共に歩み、効率化や問題解決を追求したシステムの開拓により、社会の革新を支援します。
+              </p>
+              <p><AnchorButton type="outline" href="#">詳しく見る</AnchorButton></p>
+            </MediaSidebar>
+          </Center>
+        </SeparateCover>
+      </section>
+      <section class="news">
         <header class="works__header">
-          <h2>WORKS</h2>
+          <h2>NEWS</h2>
         </header>
-        <Grid itemWidth="400px">
-          <Panel herf="#" src={works01} title="パッケージビジュアルの制作" srcAlt="" />
-          <Panel herf="#" src={works02} title="パッケージビジュアルの制作" srcAlt="" />
-          <Panel herf="#" src={works03} title="パッケージビジュアルの制作" srcAlt="" />
-          <Panel herf="#" src={works04} title="パッケージビジュアルの制作" srcAlt="" />
-          <Panel herf="#" src={works05} title="パッケージビジュアルの制作" srcAlt="" />
-          <Panel herf="#" src={works06} title="パッケージビジュアルの制作" srcAlt="" />
-        </Grid>
-        <footer class="works__footer">
-          <AnchorButton type="outline" href="#">一覧を見る</AnchorButton>
-        </footer>
-      </Center>
-    </section>
-    <section>
-      <SeparateCover>
-        <MediaSidebar src={about}>
-          <h2>新しい可能性を創造し、 未来を共に切り開く</h2>
-          <p>
-            「最初にトライしてみよう」という挑戦心と推進力を持って、企業と共に歩みます。
-            未来のゲームチェンジャーの「最初にトライしてみよう」を実現する』ことが、創業以来、すべてのサービスを継続的に発展させてきた原動力です。インターネットやスマートフォンの普及により、環境は日々変化しています。現状を維持し続けるだけでは、企業は衰退してしまいます。新しいことに挑戦しなければ、革新的なビジネスは生まれません。2020年代以降、低成長が続いた日本の経済を打破したいという強い想いから、「最初にトライしてみよう」という挑戦心と推進力を持って、ビッグデータとアルゴリズムの領域で企業と共に歩み、効率化や問題解決を追求したシステムの開拓により、社会の革新を支援します。
-          </p>
-          <p><AnchorButton type="outline" href="#">詳しく見る</AnchorButton></p>
-        </MediaSidebar>
-      </SeparateCover>
-    </section>
-    <section class="news">
-      <header class="works__header">
-        <h2>NEWS</h2>
-      </header>
-      <ul class="news__list">
-        <li class="list">
-          <p class="list__date">2023/02/22</p>
-          <p class="list__title">
-            <a href="#">役員の異動に関するお知らせ役員の異動に関するお知らせ役員の異動に関するお知らせ</a>
-          </p>
-        </li>
-        <li class="list">
-          <p class="list__date">2023/02/22</p>
-          <p class="list__title"><a href="#">役員の異動に関するお知らせ</a></p>
-        </li>
-        <li class="list">
-          <p class="list__date">2023/02/22</p>
-          <p class="list__title">
-            <a href="#">役員の異動に関するお知らせ役員の異動に関するお知らせ役員の異動に関するお知らせ</a>
-          </p>
-        </li>
-      </ul>
-    </section>
-    <section class="recuit">
-      <Center>
-        <div class="recuit__body">
-          <h2>新しい挑戦をしたい人に<br />創造的で革新的な環境を。</h2>
-          <p><AnchorButton type="ghost" href="#">JOIN TEAM</AnchorButton></p>
-        </div>
-      </Center>
-    </section>
-    <section>
-      <Contact />
-    </section>
-  </Stack>
+        <ul class="news__list">
+          <li class="list">
+            <p class="list__date">2023/02/22</p>
+            <p class="list__title">
+              <a href="#">役員の異動に関するお知らせ役員の異動に関するお知らせ役員の異動に関するお知らせ</a>
+            </p>
+          </li>
+          <li class="list">
+            <p class="list__date">2023/02/22</p>
+            <p class="list__title"><a href="#">役員の異動に関するお知らせ</a></p>
+          </li>
+          <li class="list">
+            <p class="list__date">2023/02/22</p>
+            <p class="list__title">
+              <a href="#">役員の異動に関するお知らせ役員の異動に関するお知らせ役員の異動に関するお知らせ</a>
+            </p>
+          </li>
+        </ul>
+      </section>
+      <section class="recuit">
+        <Center>
+          <div class="recuit__body">
+            <h2>新しい挑戦をしたい人に<br />創造的で革新的な環境を。</h2>
+            <p><AnchorButton type="ghost" href="#">JOIN TEAM</AnchorButton></p>
+          </div>
+        </Center>
+      </section>
+      <section>
+        <Contact />
+      </section>
+    </Stack>
+  </main>
 </BaseLayout>
 
 <style>

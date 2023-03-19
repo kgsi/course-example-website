@@ -36,7 +36,7 @@ const { src, alt = '', isReverse = false } = Astro.props
 
   .mediaSidebar__main :global(h2) {
     font-weight: bold;
-    font-size: 48px;
+    font-size: clamp(var(--text-size-xl), 5vw, var(--text-size-xxl));
     line-height: 125%;
   }
 

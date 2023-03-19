@@ -28,4 +28,10 @@ const { title } = Astro.props
     margin-inline: calc(50% - (50vw - var(--scrollbar) / 2));
     padding-inline: var(--container-margin);
   }
+
+  @media (max-width: 480px) {
+    .hero {
+      background-image: url('/bg-hero-mobile.png');
+    }
+  }
 </style>

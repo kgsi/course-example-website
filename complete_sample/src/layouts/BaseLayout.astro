@@ -31,7 +31,8 @@ const { title, description, current } = Astro.props
     <GlobalFooter />
     <style>
       .container {
-        margin-inline: var(--container-margin);
+        max-inline-size: var(--container-width);
+        padding-inline: var(--container-margin);
         line-height: var(--line-height-normal);
       }
     </style>

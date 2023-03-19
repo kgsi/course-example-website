@@ -53,7 +53,7 @@ const { current = 'index' } = Astro.props
       </svg>
     </a>
   </div>
-  <nav>
+  <nav aria-label="メイン">
     <ul>
       <li {...current === 'company' ? { ...activeClass } : {}}>
         <a {...current === 'index' ? { 'aria-current': 'page' } : {}} href="/company/">COMPANY</a>
@@ -142,9 +142,6 @@ const { current = 'index' } = Astro.props
       align-items: flex-start;
       flex-direction: column;
       gap: 8px;
-    }
-    li > a {
-      padding: 8px 0;
     }
   }
 </style>
